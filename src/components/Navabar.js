@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const Navabar = (props) => {
   return (
     <>
-       <nav className="navbar navbar-expand-lg bg-warning">
+      <nav className="navbar navbar-expand-lg bg-warning">
         <div className="container">
           <a className="navbar-brand text-dark" href="/">
-            { props.title}
+            {props.title}
           </a>
           <button
             className="navbar-toggler"
@@ -23,23 +23,21 @@ const Navabar = (props) => {
             <ul className="navbar-nav  me-auto mb-2 mx-auto mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link text-dark" aria-current="page" href="/">
-                { props.home}
+                  {props.home}
                 </a>
               </li>
 
               <li className="nav-item">
                 <a className="nav-link text-dark" href="/">
-                { props.about}
+                  {props.about}
                 </a>
               </li>
 
               <li className="nav-item">
                 <a className="nav-link text-dark" href="/">
-                { props.contact}
+                  {props.contact}
                 </a>
               </li>
-
-             
             </ul>
             <form className="d-flex" role="search">
               <input
@@ -48,7 +46,10 @@ const Navabar = (props) => {
                 placeholder="Search"
                 aria-label="Search"
               ></input>
-              <button className="btn btn-info rounded-0 text-dark" type="submit">
+              <button
+                className="btn btn-info rounded-0 text-dark"
+                type="submit"
+              >
                 Search
               </button>
             </form>
@@ -56,12 +57,13 @@ const Navabar = (props) => {
         </div>
       </nav>
     </>
-  )
-}
-
-Navabar.defaultProps = {
-  title: 'Title Here',
-  
+  );
 };
 
-export default Navabar
+Navabar.defaultProps = {
+  title: "Title Here",
+  about: "About",
+  contact: "Contact",
+};
+
+export default Navabar;

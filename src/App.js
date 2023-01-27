@@ -1,10 +1,12 @@
 import "./App.css";
 import Navabar from "./components/Navabar";
+import Form from "./components/Form";
 
 function App() {
   return (
     <>
-     <Navabar title="Reactap" home="Home"about="About" contact="Contact"/>
+     <Navabar title="Reactap" home="Home"/>
+     <Form heading="Enter text to Analyze" />
     </>
   );
 }
