@@ -12,6 +12,9 @@ const Form = (props) => {
     setText(newTxt);
   };
 
+  const handleClear = () =>{
+    setText('');
+  }
 
   const textChange = (event) => {
     setText(event.target.value);
@@ -37,10 +40,14 @@ const Form = (props) => {
             </div>
 
             <button onClick={textUpConvt} className="btn btn-primary rounded-0 me-1">
-              TEXT UPPERCASE
+              UPPERCASE
             </button>
             <button onClick={textLowerConvt} className="btn btn-info rounded-0 me-1">
-              TEXT LOWERCASE
+              LOWERCASE
+            </button>
+
+            <button onClick={handleClear} className="btn btn-warning rounded-0 me-1">
+              CLEAR
             </button>
           </div>
 
