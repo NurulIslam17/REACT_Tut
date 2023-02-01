@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
 
       <div style={navigate}>
-        <Link to='/contact' className='btn btn-sm btn-success rounded-0 me-3'>Contact</Link>
+        <Link to='/about' className='btn btn-sm btn-success rounded-0 me-3'>More..</Link>
         <Link to='/project' className='btn btn-sm btn-warning rounded-0'>Project</Link>
       </div>
     </>
