@@ -64,7 +64,7 @@ const Form = (props) => {
 
         <div className="row mt-4">
           <h4>Text Preview : </h4>
-          <p placeholder="Text preview here">{text}</p>
+          <p placeholder="Text preview here">{text.length>0?text:'Enter some text above the text box to preview here...'}</p>
         </div>
 
       </div>
