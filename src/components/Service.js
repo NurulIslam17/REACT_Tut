@@ -13,30 +13,32 @@ const Service = () => {
           <div className="row pt-5">
             <div className="col-md-6">
               <h3>What we provide</h3>
-              <ol>
-                <li> <p>Lorem ipsum dolor, sit amet consectetur
+              <ul>
+                <li> <p style={align_block}>Lorem ipsum dolor, sit amet consectetur
                  adipisicing elit. Nobis
                 sint recusandae tenetur porro 
                 distinctio possimus aliquid</p></li>
 
-                <li>mollitia enim quod similique la
+                <li><p style={align_block}>
+                mollitia enim quod similique la
                 bore architecto, voluptates
                 ratione ad autem temporibus seq
                 ui asperiores itaque explicabo
-                assumenda ipsam? Doloremque, at. Impe</li>
+                assumenda ipsam? Doloremque, at. Impe</p></li>
 
-                <li><p>Lorem ipsum dolor, sit amet consectetur
+                <li><p style={align_block}>Lorem ipsum dolor, sit amet consectetur
                  adipisicing elit. Nobis
                 sint recusandae tenetur porro 
                 distinctio possimus aliquid</p>
                 </li>
-                <li>dit reprehenderit aliquam,
+                <li><p style={align_block}>dit reprehenderit aliquam,
                 quibusdam tempora enim veniam maxime deleniti soluta ipsa magnam
                 dolorum suscipit labore expedita, doloremque ipsu
                 m corrupti est in deserunt placeat vel dolore officiis. Aperiam
-                animi delectus, a re pudiandae</li>
-              </ol>
+                animi delectus, a re pudiandae</p></li>
+              </ul>
               
+                 <p style={align_block}>
                  quo aut nesciunt temporibus,
                 ipsam voluptate nulla nostrum recusandae dese runt odio sint
                 adipisci? Recusandae iusto officia quod reprehenderit
@@ -44,6 +46,7 @@ const Service = () => {
                 illo et soluta quasi quos hic at labore nulla amet perferendis
                 eaqu
              
+                 </p>
             </div>
 
             <div className="col-md-6">

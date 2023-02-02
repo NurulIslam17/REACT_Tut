@@ -28,7 +28,7 @@ const Form = (props) => {
 
         <div className="row mt-5">
           <div className="col-md-8 mx-auto">
-            <h4>{props.heading}</h4>
+            <h4>{props.header}</h4>
             <div className="form-group mb-2">
               <textarea
                 className="form-control rounded-0 shadow-none border-dark"

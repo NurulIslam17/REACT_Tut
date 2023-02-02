@@ -13,7 +13,7 @@ const ContactForm = () => {
             <h3> Get in touch</h3>
             <form>
               <div class="form-group mb-3">
-                <label for="exampleInputEmail1">Email</label>
+                <label htmlFor="exampleInputEmail1">Email</label>
                 <input
                   type="email"
                   class="form-control rounded-0"
@@ -23,7 +23,7 @@ const ContactForm = () => {
                 />
               </div>
               <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Address</label>
+                <label htmlFor="exampleInputPassword1">Address</label>
                 <input
                   type="text"
                   class="form-control rounded-0"
@@ -32,7 +32,7 @@ const ContactForm = () => {
                 />
               </div>
               <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Password</label>
+                <label htmlFor="exampleInputPassword1">Password</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
               </div>
               <button type="submit" class="btn btn-primary rounded-0">

@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Form from '../components/Form'
 import Footer from '../components/Footer'
+import Form from '../components/Form'
 
 const Project = () => {
   return (
     <>
       <Navbar/>
-      <Form heading ="Analyze Text"/>
+      <Form header="Text Analyzing App"/>
       <Footer/>
     </>
   )

@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <div className='py-3 mt-3' style={css_footer}>
-        <p className='text-center text-light py-0 my-0'>Designed and Developed By &#169;Nurul Islam</p>
+        <p className='text-center text-light py-0 my-0'>&#169;Copy Right Developed By Nurul Islam</p>
       </div>
     </>
   )
