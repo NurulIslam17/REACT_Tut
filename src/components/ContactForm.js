@@ -3,30 +3,23 @@ import React, { useState } from "react";
 import ContactImage from "../assets/header.png";
 
 const ContactForm = () => {
-  const [email, setEmail] = useState("");
-  const [address,setAddress] = useState("")
-  const [comment,setComment] = useState("")
+  const [user, setUser] = useState({ email: " ", address: " ", comment: " " });
+  const { email, address, comment } = user;
 
-  const handleEmailChange = (e) => {
-    e.preventDefault();
-    setEmail(e.target.value)
-  };
-  const handleAddressChange = (e) => {
-    e.preventDefault();
-    setAddress(e.target.value)
-  };
-  const handleCommentsChange = (e) => {
-    e.preventDefault();
-    setComment(e.target.value)
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: [e.target.value] });
   };
 
-  const handleFormSubmit = (e) =>{
-    e.preventDefault()
-    console.log('Email : ' +email)
-    console.log('Address : ' +address)
-    console.log('Comment : ' +comment)
-  }
-
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    let contactInfo = {
+      email,
+      address,
+      comment,
+    };
+    console.log(contactInfo);
+    alert("Thank you for Your Contact");
+  };
 
   return (
     <div className="py-3">
@@ -44,7 +37,8 @@ const ContactForm = () => {
                   type="email"
                   className="form-control rounded-0"
                   id="email"
-                  onChange={handleEmailChange}
+                  name="email"
+                  onChange={handleChange}
                   value={email}
                   required
                   placeholder="Enter your email"
@@ -55,18 +49,20 @@ const ContactForm = () => {
                 <input
                   type="text"
                   className="form-control rounded-0"
-                  onChange={handleAddressChange}
+                  onChange={handleChange}
                   value={address}
-                  id="exampleInputPassword1"
-                  placeholder="Enter Your Password"
+                  id="address"
+                  name="address"
+                  placeholder="Enter Your Address"
                 />
               </div>
               <div className="form-group mb-3">
                 <label htmlFor="exampleInputPassword1">Comment</label>
                 <textarea
                   className="form-control"
-                  id="exampleFormControlTextarea1"
-                  onChange={handleCommentsChange}
+                  id="comment"
+                  name="comment"
+                  onChange={handleChange}
                   value={comment}
                   rows="5"
                 ></textarea>
