@@ -32,7 +32,7 @@ const ContactForm = () => {
                 />
               </div>
               <div class="form-group mb-3">
-                <label htmlFor="exampleInputPassword1">Password</label>
+                <label htmlFor="exampleInputPassword1">Comment</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
               </div>
               <button type="submit" class="btn btn-primary rounded-0">

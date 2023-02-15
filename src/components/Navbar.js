@@ -34,7 +34,17 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link " aria-current="page" to="/project">
-                  Projects
+                  TA App
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/counter">
+                  Counter
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/stopwatch">
+                  Stopwatch
                 </Link>
               </li>
 
