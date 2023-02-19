@@ -16,6 +16,7 @@ const ContactForm = () => {
       address: Yup.string("Enter String").required("Address Field required"),
       comment: Yup.string("Enter String")
         .max(100, "Maximum length should be 100 Characters")
+        .min(5, "Length should be more than 5 Characters")
         .required("Commemt Field required"),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -25,9 +26,15 @@ const ContactForm = () => {
   });
 
   // console.log(formik.errors);
-  const emailError = formik.touched.email && formik.errors.name && (<span className="text-danger">{formik.errors.email}</span>)
-  const addressError = formik.touched.address && formik.errors.address && (<span className="text-danger">{formik.errors.address}</span>)
-  const commentError = formik.touched.comment && formik.errors.comment && (<span className="text-danger">{formik.errors.comment}</span>)
+  const emailError = formik.touched.email && formik.errors.name && (
+    <span className="text-danger">{formik.errors.email}</span>
+  );
+  const addressError = formik.touched.address && formik.errors.address && (
+    <span className="text-danger">{formik.errors.address}</span>
+  );
+  const commentError = formik.touched.comment && formik.errors.comment && (
+    <span className="text-danger">{formik.errors.comment}</span>
+  );
 
   return (
     <div className="py-3">
