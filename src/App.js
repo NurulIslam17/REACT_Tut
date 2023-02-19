@@ -9,6 +9,7 @@ import Project from "./pages/Project";
 import Counter from "./pages/Counter";
 import Stopwatch from "./pages/Stopwatch";
 import Toggle from "./pages/Toggle";
+import FQA from "./pages/FQA";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/toggle" element={<Toggle />} />
+        <Route path="/fqa" element={<FQA />} />
       </Routes>
     </>
   );

@@ -59,6 +59,11 @@ const Navbar = () => {
                   Toggle
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/fqa">
+                  FQAs
+                </Link>
+              </li>
 
             </ul>
           </div>
