@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import ContactImage from "../assets/header.png";
 
@@ -10,11 +11,23 @@ const ContactForm = () => {
       address: "",
       comment: "",
     },
-    onSubmit: (values,{resetForm}) => {
+    validationSchema: Yup.object({
+      email: Yup.string("Enter String").required("Email Field required"),
+      address: Yup.string("Enter String").required("Address Field required"),
+      comment: Yup.string("Enter String")
+        .max(100, "Maximum length should be 100 Characters")
+        .required("Commemt Field required"),
+    }),
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
-      resetForm({values:''})
+      resetForm({ values: "" });
     },
   });
+
+  // console.log(formik.errors);
+  const emailError = formik.touched.email && formik.errors.name && (<span className="text-danger">{formik.errors.email}</span>)
+  const addressError = formik.touched.address && formik.errors.address && (<span className="text-danger">{formik.errors.address}</span>)
+  const commentError = formik.touched.comment && formik.errors.comment && (<span className="text-danger">{formik.errors.comment}</span>)
 
   return (
     <div className="py-3">
@@ -38,6 +51,7 @@ const ContactForm = () => {
                   required
                   placeholder="Enter your email"
                 />
+                {emailError}
               </div>
               <div className="form-group mb-3">
                 <label htmlFor="exampleInputPassword1">Address</label>
@@ -50,6 +64,7 @@ const ContactForm = () => {
                   name="address"
                   placeholder="Enter Your Address"
                 />
+                {addressError}
               </div>
               <div className="form-group mb-3">
                 <label htmlFor="exampleInputPassword1">Comment</label>
@@ -61,6 +76,7 @@ const ContactForm = () => {
                   value={formik.values.comment}
                   rows="5"
                 ></textarea>
+                {commentError}
               </div>
               <button type="submit" className="btn btn-primary rounded-0">
                 Submit
