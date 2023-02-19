@@ -1,25 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormik } from "formik";
 
 import ContactImage from "../assets/header.png";
 
 const ContactForm = () => {
-  const [user, setUser] = useState({ email: " ", address: " ", comment: " " });
-  const { email, address, comment } = user;
-
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: [e.target.value] });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    let contactInfo = {
-      email,
-      address,
-      comment,
-    };
-    console.log(contactInfo);
-    alert("Thank you for Your Contact");
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      address: "",
+      comment: "",
+    },
+    onSubmit: (values,{resetForm}) => {
+      console.log(values);
+      resetForm({values:''})
+    },
+  });
 
   return (
     <div className="py-3">
@@ -30,7 +25,7 @@ const ContactForm = () => {
           </div>
           <div className="col-md-6 pt-5">
             <h3> Get in touch</h3>
-            <form action="" onSubmit={handleFormSubmit}>
+            <form action="" onSubmit={formik.handleSubmit}>
               <div className="form-group mb-3">
                 <label htmlFor="exampleInputEmail1">Email</label>
                 <input
@@ -38,8 +33,8 @@ const ContactForm = () => {
                   className="form-control rounded-0"
                   id="email"
                   name="email"
-                  onChange={handleChange}
-                  value={email}
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
                   required
                   placeholder="Enter your email"
                 />
@@ -49,8 +44,8 @@ const ContactForm = () => {
                 <input
                   type="text"
                   className="form-control rounded-0"
-                  onChange={handleChange}
-                  value={address}
+                  onChange={formik.handleChange}
+                  value={formik.values.address}
                   id="address"
                   name="address"
                   placeholder="Enter Your Address"
@@ -62,8 +57,8 @@ const ContactForm = () => {
                   className="form-control"
                   id="comment"
                   name="comment"
-                  onChange={handleChange}
-                  value={comment}
+                  onChange={formik.handleChange}
+                  value={formik.values.comment}
                   rows="5"
                 ></textarea>
               </div>
