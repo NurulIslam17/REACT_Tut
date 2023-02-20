@@ -15,7 +15,8 @@ function TeamMember() {
           <h3 className="text-center">Togather we work...</h3>
           {teamMember && teamMember.map((data) => {
 
-            const {id,name,gender,profession,about,institute,education} = data;
+            const {id,name,gender,profession,about,institute,education} = data; 
+            
             return (
               <>
                 <div className="col-md-3" key={id}>

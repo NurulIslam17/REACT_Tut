@@ -69,6 +69,11 @@ const Navbar = () => {
                   FQAs
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/api">
+                  API
+                </Link>
+              </li>
 
               {/* <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

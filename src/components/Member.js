@@ -1,15 +1,12 @@
 import React from "react";
 import male from "../assets/malee.png";
 import female from "../assets/female.png";
-import { useParams,useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 function Member() {
-
-  const {name} = useParams()
-  const location = useLocation()
-  console.log(location)
-  
-
+  const { name } = useParams();
+  const location = useLocation();
+  // console.log(location);
   return (
     <>
       <div className="container mt-3">
@@ -18,23 +15,37 @@ function Member() {
             <div className="card card-body rounded-0 shadow">
               <div className="row">
                 <div className="col-md-4">
-                  <img src={location.state.gender === "Male" ? male : female} style={{height:"220px",width:"100%"}} alt=""/>
-                  <p className="text-center"><strong>{name}</strong> </p>
+                  <img
+                    src={location.state.gender === "Male" ? male : female}
+                    style={{ height: "220px", width: "100%" }}
+                    alt=""
+                  />
+                  <p className="text-center">
+                    <strong>{name}</strong>{" "}
+                  </p>
                 </div>
-                <div className="col-md-2">
-                  
-                </div>
+                <div className="col-md-2"></div>
                 <div className="col-md-6 pt-3 pe-4">
-                  <p><strong>Profession : </strong>{location.state.profession}</p>
-                  <p><strong>Education : </strong> {location.state.education}</p>
-                  <p><strong>Institute : </strong> {location.state.institute}</p>
-                  <p><strong>Email : </strong> abc@gmail.com</p>
-                  <p><strong>Address : </strong> Dhaka,Bangladesh</p>
+                  <p>
+                    <strong>Profession : </strong>
+                    {location.state.profession}
+                  </p>
+                  <p>
+                    <strong>Education : </strong> {location.state.education}
+                  </p>
+                  <p>
+                    <strong>Institute : </strong> {location.state.institute}
+                  </p>
+                  <p>
+                    <strong>Email : </strong> abc@gmail.com
+                  </p>
+                  <p>
+                    <strong>Address : </strong> Dhaka,Bangladesh
+                  </p>
                 </div>
               </div>
               <div className="row">
-                <p style={{ textAlign:"justify"}}>{location.state.about}</p>
-              
+                <p style={{ textAlign: "justify" }}>{location.state.about}</p>
               </div>
             </div>
           </div>
