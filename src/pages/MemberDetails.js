@@ -4,6 +4,7 @@ import Member from "../components/Member";
 import Navbar from "../components/Navbar";
 
 function MemberDetails() {
+
   return (
     <>
       <Navbar />

@@ -33,7 +33,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/tems">
+                <Link className="nav-link " aria-current="page" to="/teams">
                   Team
                 </Link>
               </li>
