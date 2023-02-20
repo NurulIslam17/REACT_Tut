@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   const css_footer = {
     backgroundColor:"black",
-    position:"absolute",
+    // position:"absolute",
     bottom:"0px",
     width:"100%"
   }

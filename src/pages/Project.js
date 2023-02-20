@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import Form from '../components/Form'
 
 const Project = () => {
@@ -8,7 +7,6 @@ const Project = () => {
     <>
       <Navbar/>
       <Form header="Text Analyzing App"/>
-      <Footer/>
     </>
   )
 }

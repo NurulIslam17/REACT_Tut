@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Service from "../components/Service";
 
@@ -9,7 +9,7 @@ const About = () => {
     <>
       <Navbar />
       <Service/>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 };

@@ -10,6 +10,8 @@ import Counter from "./pages/Counter";
 import Stopwatch from "./pages/Stopwatch";
 import Toggle from "./pages/Toggle";
 import FQA from "./pages/FQA";
+import Team from "./pages/Team";
+import MemberDetails from "./pages/MemberDetails";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/toggle" element={<Toggle />} />
         <Route path="/fqa" element={<FQA />} />
+        <Route path="/tems" element={<Team />} />
+        <Route path="/member" element={<MemberDetails />} />
       </Routes>
     </>
   );

@@ -1,16 +1,16 @@
 import React from 'react'
 import Footer from '../components/Footer'
-import FqaComp from '../components/FqaComp'
 import Navbar from '../components/Navbar'
+import TeamMember from '../components/TeamMember'
 
-function FQA() {
+function Team() {
   return (
     <>
       <Navbar/>
-      <FqaComp/>
+      <TeamMember />
       <Footer/>
     </>
   )
 }
 
-export default FQA
+export default Team
