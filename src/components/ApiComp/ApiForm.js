@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+const postURL = "http://127.0.0.1:8000/api/store_user";
+
 function ApiForm() {
+  const [success, setSuccess] = useState(false);
+
+  //  store data in database Using POST Method
+  const store = (data) => {
+    fetch(postURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Fetch data table");
+          setSuccess(true);
+        } else {
+          console.log("Data Insertion Failed");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -15,11 +39,11 @@ function ApiForm() {
         .required("Name is required")
         .min(3, "Name is too short")
         .max(30, "Name is too long"),
-      email: Yup.string('Enter Email').required('Email is required'),
+      email: Yup.string("Enter Email").required("Email is required"),
       phone: Yup.string("Enter Number")
-      .required('Number required')
-        .min(11, "Phone number must be 11 digit")
-        .max(11, "Phone number must be 11 digit"),
+        .required("Number required")
+        .min(10, "Phone number must be 10 digit")
+        .max(10, "Phone number must be 10 digit"),
       password: Yup.string("Enter Password")
         .required("Password required")
         .min(8, "Must be more than 8 digit")
@@ -27,9 +51,14 @@ function ApiForm() {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
+      store(values);
       resetForm({ values: "" });
+      setSuccess(true);
     },
   });
+  setTimeout(() => {
+    setSuccess(false);
+  }, 8000);
 
   // console.log(formik.errors);
   const nameError = formik.touched.name && formik.errors.name && (
@@ -47,7 +76,10 @@ function ApiForm() {
 
   return (
     <>
-      <h4 className="text-center">API</h4>
+      <h4 className="text-center">Create User</h4>
+      {success && (
+        <p className="text-center text-success">Data Inserted Successfully!</p>
+      )}
       <hr />
       <form className="border border-1 p-2 m-2" onSubmit={formik.handleSubmit}>
         <div className="form-group mb-2">
@@ -82,7 +114,7 @@ function ApiForm() {
         <div className="form-group mb-2">
           <label htmlFor="phone">Phone</label>
           <input
-            type="number"
+            type="text"
             className="form-control rounded-0"
             id="phone"
             name="phone"

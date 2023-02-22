@@ -2,19 +2,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Spinner from "../Spinner";
 
+import user from "../../assets/cmnUsre.png";
+
 // User API Links
 const getURL = "http://127.0.0.1:8000/api/get_user";
 const deleteURL = "http://127.0.0.1:8000/api/delete";
-// const storeURL = "http://127.0.0.1:8000/api/store_user";
 
 function ApiView() {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [deleteMsg, setDeleteMsg] = useState(false);
 
   // view data in table  (get data from database)
   const getData = () => {
-    
     fetch(getURL)
       .then((response) => {
         setIsLoading(true);
@@ -25,10 +25,8 @@ function ApiView() {
       });
   };
   useEffect(() => {
-    
     getData();
     setIsLoading(false);
-    
   }, []);
   // delete user
   const deleteHandle = (id) => {
@@ -40,20 +38,36 @@ function ApiView() {
       setDeleteMsg(true);
       setTimeout(() => {
         setDeleteMsg(false);
-      }, 1500);
+      }, 1000);
     });
+  };
+  // refress
+  const refresHandler = () => {
+    getData();
   };
 
   return (
     <>
       <h4 className="text-center">User Info</h4>
-      {deleteMsg && <p className="text-danger">Data Deleted</p>}
-      
+      {deleteMsg ? (
+        <p className="text-danger">Data Deleted</p>
+      ) : (
+        <button
+          className="btn m-0 p-0"
+          style={{ fontSize: "22px" }}
+          onClick={refresHandler}
+        >
+          🔄
+        </button>
+      )}
 
       <table className="table table-bordered table-striped">
         <thead>
           <tr className="bg-info">
             <th scope="col">SL</th>
+            <th scope="col" className="text-center">
+              Photo
+            </th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
@@ -71,6 +85,14 @@ function ApiView() {
                 <>
                   <tr key={id}>
                     <th scope="row">{index + 1}</th>
+                    <td className="text-center">
+                      <img
+                        src={user}
+                        alt=""
+                        className="rounded-circle"
+                        style={{ height: "40px", width: "40px" }}
+                      />
+                    </td>
                     <td>{name}</td>
                     <td>{email}</td>
                     <td>{phone}</td>
@@ -92,7 +114,6 @@ function ApiView() {
               );
             })}
         </tbody>
-        
       </table>
       {!isLoading && <Spinner />}
     </>

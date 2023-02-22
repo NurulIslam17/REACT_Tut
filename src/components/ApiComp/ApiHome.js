@@ -6,7 +6,7 @@ function ApiHome() {
   return (
     <>
       <div className="container">
-        <div className="row mt-4 shadow">
+        <div className="row mt-4 border shadow p-2">
           <div className="col-md-4">
             <ApiForm />
           </div>
