@@ -12,6 +12,7 @@ function ApiView() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [deleteMsg, setDeleteMsg] = useState(false);
+  const [edit, setEdit] = useState([]);
 
   // view data in table  (get data from database)
   const getData = () => {
@@ -40,6 +41,10 @@ function ApiView() {
         setDeleteMsg(false);
       }, 1000);
     });
+  };
+  //Edit user
+  const editHandle = (id) => {
+    alert(id);
   };
   // refress
   const refresHandler = () => {
@@ -97,7 +102,12 @@ function ApiView() {
                     <td>{email}</td>
                     <td>{phone}</td>
                     <td className="d-flex justify-content-center">
-                      <button className="btn btn-sm btn-success rounded-0 me-2">
+                      <button
+                        className="btn btn-sm btn-success rounded-0 me-2"
+                        onClick={() => {
+                          editHandle(id);
+                        }}
+                      >
                         Edit
                       </button>
                       <button
