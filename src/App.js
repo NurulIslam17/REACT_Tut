@@ -13,6 +13,7 @@ import FQA from "./pages/FQA";
 import Team from "./pages/Team";
 import MemberDetails from "./pages/MemberDetails";
 import Api from "./pages/Api/Api";
+import EditModal from "./components/ApiComp/EditModal";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/teams" element={<Team />} />
         <Route path="/teams/:name" element={<MemberDetails />} />
         <Route path="/api" element={<Api />} />
+        <Route path="/api/:name" element={<EditModal />} />
       </Routes>
     </>
   );

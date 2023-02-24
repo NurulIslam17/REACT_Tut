@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Spinner from "../Spinner";
 import EditModal from "./EditModal";
 
@@ -44,11 +45,11 @@ function ApiView() {
       }, 1000);
     });
   };
-  //Edit user
-  const editHandle = (id) => {
-    setEditOpen(true)
-    alert(id);
-  };
+  // //Edit user
+  // const editHandle = (id) => {
+  //   setEditOpen(true)
+  //   alert(id);
+  // };
   // refress
   const refresHandler = () => {
     getData();
@@ -106,14 +107,17 @@ function ApiView() {
                     <td>{email}</td>
                     <td>{phone}</td>
                     <td className="d-flex justify-content-center">
-                      <button
+                      <Link
                         className="btn btn-sm btn-success rounded-0 me-2"
-                        onClick={() => {
-                          editHandle(id);
-                        }}
+                        // onClick={() => {
+                        //   editHandle(id);
+                        // }}
+                        to={name}
+
+                        state = {{id, name, email, phone}}
                       >
                         Edit
-                      </button>
+                      </Link>
                       <button
                         className="btn btn-sm btn-danger rounded-0 me-2"
                         onClick={() => {
