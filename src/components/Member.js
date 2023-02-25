@@ -6,7 +6,7 @@ import { useParams, useLocation } from "react-router-dom";
 function Member() {
   const { name } = useParams();
   const location = useLocation();
-  // console.log(location);
+  console.log(location);
   return (
     <>
       <div className="container mt-3">
@@ -36,14 +36,26 @@ function Member() {
                   <p>
                     <strong>Institute : </strong> {location.state.institute}
                   </p>
-                  <p>
-                    <strong>Email : </strong> abc@gmail.com
-                  </p>
-                  <p>
-                    <strong>Address : </strong> Dhaka,Bangladesh
-                  </p>
+
+                  {location.state.contact.map((contact_data) => {
+                    const { city, country, email, phone } = contact_data;
+                    return (
+                      <>
+                        <p>
+                          <strong>Email : </strong> {email}
+                        </p>
+                        <p>
+                          <strong>Phone : </strong> {phone}
+                        </p>
+                        <p>
+                          <strong>Address : </strong> {city} , {country}
+                        </p>
+                      </>
+                    );
+                  })}
                 </div>
               </div>
+              <hr/>
               <div className="row">
                 <p style={{ textAlign: "justify" }}>{location.state.about}</p>
               </div>

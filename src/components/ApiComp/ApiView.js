@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../Spinner";
-import EditModal from "./EditModal";
 
 import user from "../../assets/cmnUsre.png";
 
@@ -15,7 +14,6 @@ function ApiView() {
   const [isLoading, setIsLoading] = useState(true);
   const [deleteMsg, setDeleteMsg] = useState(false);
   // const [edit, setEdit] = useState([]);
-  const [openEdit,setEditOpen] = useState(false)
 
   // view data in table  (get data from database)
   const getData = () => {
@@ -58,7 +56,6 @@ function ApiView() {
   return (
     <>
       <h4 className="text-center">User Info</h4>
-      {openEdit && <EditModal/>}
       {deleteMsg ? (
         <p className="text-danger">Data Deleted</p>
       ) : (

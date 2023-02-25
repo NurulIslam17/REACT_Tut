@@ -53,6 +53,7 @@ function EditModal() {
                     onChange={formik.handleChange}
                     className="form-control rounded-0"
                     id="name"
+                    autoComplete="true"
                   />
                 </div>
                 <div className="form-group mb-2">
@@ -63,6 +64,7 @@ function EditModal() {
                     onChange={formik.handleChange}
                     className="form-control rounded-0"
                     id="email"
+                    autoComplete="true"
                   />
                 </div>
                 <div className="form-group mb-2">
@@ -73,6 +75,7 @@ function EditModal() {
                     onChange={formik.handleChange}
                     className="form-control rounded-0"
                     id="phone"
+                    autoComplete="true"
                   />
                 </div>
                 <div className="form-group mb-2">
@@ -83,6 +86,7 @@ function EditModal() {
                     onChange={formik.handleChange}
                     className="form-control rounded-0"
                     id="password"
+                    autoComplete="true"
                   />
                 </div>
                 <div className="form-group mb-2">
