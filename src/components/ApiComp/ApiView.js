@@ -90,7 +90,7 @@ function ApiView() {
         <tbody>
           {data &&
             data.map((value, index) => {
-              const { id, name, email, phone } = value;
+              const { id, name, email, phone,password} = value;
               return (
                 <>
                   <tr key={id}>
@@ -109,12 +109,8 @@ function ApiView() {
                     <td className="d-flex justify-content-center">
                       <Link
                         className="btn btn-sm btn-success rounded-0 me-2"
-                        // onClick={() => {
-                        //   editHandle(id);
-                        // }}
                         to={name}
-
-                        state = {{id, name, email, phone}}
+                        state = {{id, name, email, phone,password}}
                       >
                         Edit
                       </Link>
